@@ -1,0 +1,37 @@
+@import './normail.scss';
+@import './icon.scss';
+@import './markdown.scss'; //头部导航栏
+.app-nav {
+  background-color: #00a3ff !important;
+  .van-nav-bar__title {
+    font-size: 16px;
+    color: #fff;
+  }
+  .van-icon {
+    color: #fff !important;
+  }
+}
+
+.main-color {
+  background-color: #3296fa !important;
+}
+.article-title {
+  color: #282828;
+}
+//font-size
+@for $i from 1 through 50 {
+  .fz#{$i} {
+    font-size: $i + px;
+  }
+}
+//line-height
+@for $i from 1 through 60 {
+  .l-h#{$i} {
+    line-height: $i + px;
+  }
+}
+@for $i from 1 through 60 {
+  .h-#{$i} {
+    height: $i + px;
+  }
+}
