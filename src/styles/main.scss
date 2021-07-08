@@ -1,0 +1,144 @@
+@import './normalize.scss';
+@import './ui.scss';
+i[class^='icon'] {
+  display: inline-block;
+  line-height: 45px;
+  border-radius: 100px;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+[disabled] {
+  opacity: 0.5 !important;
+}
+.white {
+  color: white;
+}
+.w-h-45 {
+  width: 45px;
+  height: 45px;
+}
+.icon-user {
+  background-image: url(~@/assets/icon/icon_user.png);
+}
+.icon-position {
+  background-image: url(~@/assets/icon/icon_position.png);
+}
+.icon-search {
+  background-image: url(~@/assets/icon/icon_search.png);
+}
+.icon-help {
+  background-image: url(~@/assets/icon/icon_help.png);
+}
+.icon-menu_1 {
+  background-image: url(~@/assets/icon/menu_1.png);
+}
+.icon-menu_2 {
+  background-image: url(~@/assets/icon/menu_2.png);
+}
+.icon-menu_3 {
+  background-image: url(~@/assets/icon/menu_3.png);
+}
+.icon-menu_4 {
+  background-image: url(~@/assets/icon/menu_4.png);
+}
+.icon-menu_5 {
+  background-image: url(~@/assets/icon/menu_5.png);
+}
+
+@mixin webkit($type, $value) {
+  -webkit-#{$type}: $value;
+  -moz-#{$type}: $value;
+  -ms-#{type}: $value;
+  -o-#{$type}: $value;
+  #{$type}: $value;
+}
+.flex {
+  display: flex;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-around {
+  justify-content: space-around;
+}
+.flex-between {
+  justify-content: space-between;
+}
+.p-r {
+  position: relative;
+}
+.text-center {
+  text-align: center;
+}
+.f-14 {
+  font-size: 14px;
+}
+.op-8 {
+  opacity: 0.8;
+  color: #34393f;
+}
+.over-hid {
+  overflow: auto;
+}
+
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 3px; /*滚动条的背景区域的圆角*/
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 3px; /*滚动条的圆角*/
+  background-color: #ccc; /*滚动条的背景颜色*/
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #bbb;
+}
+
+::-webkit-scrollbar-thumb:active {
+  cursor: pointer;
+}
+.user-warp {
+  position: relative;
+  padding: 83px 30px 180px 41px;
+}
+.mt {
+  margin-top: 150px;
+}
+.p20 {
+  padding: 20px 0;
+}
+.button-black {
+  display: block;
+  width: 100%;
+} /* text-algin */
+.text-center {
+  text-align: center;
+}
+.text-left {
+  text-align: left;
+}
+.text-right {
+  text-align: right;
+}
+
+/* float */
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+
+//汽车状态颜色
+.color-wait {
+  color: orange;
+}
+.color-over {
+  color: green;
+}
+.color-return {
+  color: #a1a1a1;
+}

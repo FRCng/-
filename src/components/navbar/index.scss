@@ -1,0 +1,27 @@
+.navbar-wrap {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 85px;
+  z-index: 10;
+  text-align: center;
+  li {
+    display: inline-block;
+    vertical-align: middle;
+    i {
+      margin: 0 17px;
+      background-color: #34393f;
+    }
+  }
+}
+.cars-select {
+  display: block;
+  width: 240px;
+  height: 80px;
+  line-height: 80px;
+  font-size: 26px;
+  color: #fff;
+  background-color: #34393f;
+  border-radius: 45px;
+  margin: 0 17px;
+}
