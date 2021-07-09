@@ -20,9 +20,14 @@ const routes = [
         component: () => import('@/views/shop/'),
       },
       {
-        path: '/viode',
-        name: 'viode',
-        component: () => import('@/views/viode/'),
+        path: '/category',
+        name: 'category',
+        component: () => import('@/views/category/'),
+      },
+      {
+        path: '/cart',
+        name: 'cart',
+        component: () => import('@/views/cart/'),
       },
       {
         path: '/my',

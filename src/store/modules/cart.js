@@ -2,6 +2,9 @@ import { Toast } from 'vant';
 const state = {
   cart: JSON.parse(localStorage.getItem('goods_item')) || [],
 };
+const getters = {
+  goods_item: (state) => state.cart
+}
 const mutations = {
   ADD_NUMBER(state, value) {
     value.num++;
@@ -30,5 +33,5 @@ export default {
   namespaced: true,
   state,
   mutations,
-  actions,
+  actions, getters
 };

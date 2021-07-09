@@ -2,6 +2,9 @@ const state = {
   token: JSON.parse(localStorage.getItem('user_token')) || null,
   CachePage: ['Layout'],
 };
+const getters = {
+  user_token: (state) => state.token
+}
 const mutations = {
   SET_TOKEN(state, value) {
     state.token = value;
@@ -29,5 +32,5 @@ const mutations = {
 export default {
   namespaced: true,
   state,
-  mutations,
+  mutations, getters
 };

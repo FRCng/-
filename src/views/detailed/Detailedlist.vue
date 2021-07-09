@@ -6,9 +6,7 @@
       finished-text="没有更多了"
       @load="get_news_detailed"
     >
-      <h1 class="title article-title fz20 l-h32">
-        {{ article.title }}
-      </h1>
+      <h1 class="title article-title fz20 l-h32">{{ article.title }}</h1>
       <van-cell>
         <!-- 使用 title 插槽来自定义标题 -->
         <div slot="icon">
@@ -22,15 +20,10 @@
             round
             :icon="article.is_followed ? '' : 'plus'"
             @click="handle_followed"
-            >{{ article.is_followed ? '已关注' : '关注' }}</van-button
-          >
+          >{{ article.is_followed ? '已关注' : '关注' }}</van-button>
         </div>
       </van-cell>
-      <div
-        class="markdown-body"
-        ref="article-info"
-        v-html="article.content"
-      ></div>
+      <div class="markdown-body" ref="article-info" v-html="article.content"></div>
       <!-- 评论 -->
       <Comment :id="id" />
     </van-list>

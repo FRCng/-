@@ -1,34 +1,36 @@
 <template>
-  <div>
-    <template v-for="item in cart_info">
-      <div class="cart-goods">
-        <van-checkbox
-          v-model="item.status"
-          @change="handleStatus"
-        ></van-checkbox>
-        <van-card
-          :num="item.num"
-          :price="item.price"
-          desc="描述信息"
-          :title="item.title"
-          :thumb="item.img"
-          centered
-        >
-          <template #footer>
-            <van-button size="small" @click="minus(item)">-</van-button>
-            <van-button size="small" @click="add(item)">+</van-button>
-          </template></van-card
-        >
+  <div id="cart">
+    <template v-if="show_cart">
+      <template v-for="item in cart_info">
+        <div class="cart-goods">
+          <van-checkbox v-model="item.status" @change="handleStatus"></van-checkbox>
+          <van-card
+            :num="item.num"
+            :price="item.price"
+            desc="描述信息"
+            :title="item.title"
+            :thumb="item.img"
+            centered
+          >
+            <template #footer>
+              <van-button size="small" @click="minus(item)">-</van-button>
+              <van-button size="small" @click="add(item)">+</van-button>
+            </template>
+          </van-card>
+        </div>
+      </template>
+      <div class="settle">
+        <div class="btn" :class="{ current: show }" @click="handle_check"></div>
+        <div>
+          合计:
+          <i>{{ money }}</i>
+        </div>
+        <van-button type="danger" @click="payment">付款</van-button>
       </div>
     </template>
-    <div class="settle">
-      <div class="btn" :class="{ current: show }" @click="handle_check"></div>
-      <div>
-        合计:
-        <i>{{ money }}</i>
-      </div>
-      <van-button type="danger" @click="payment">付款</van-button>
-    </div>
+    <template v-else>
+      <div class="none">购物车空空如野</div>
+    </template>
   </div>
 </template>
 
@@ -46,6 +48,10 @@ export default {
     show() {
       return !this.cart_info.find((item) => !item.status);
     },
+    show_cart(){
+      console.log(this.cart_info);
+     return this.cart_info && this.cart_info.length>0 ? true : false
+    },
     money() {
       let count = 0;
       this.cart_info.forEach((element) => {
@@ -57,11 +63,9 @@ export default {
     },
     CheckAll() {
       return true;
-      console.log('555');
     },
   },
   created() {
-    console.log(this.cart_info);
   },
   methods: {
     payment() {
@@ -102,6 +106,11 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+#cart {
+  position: relative;
+  width: 100vw;
+  height: calc(100vw - 50px);
+}
 .cart-goods {
   display: flex;
   .van-checkbox {
@@ -110,6 +119,14 @@ export default {
   .van-card__content {
     padding: 15px;
   }
+}
+.none {
+  color: #ccc;
+  font-size: 20px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%);
 }
 .settle {
   position: fixed;

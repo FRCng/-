@@ -5,10 +5,10 @@ import { Toast } from 'vant';
 import router from '@/router';
 
 const refresh_token_req = axios.create({
-  baseURL: '',
+  baseURL: 'http://ttapi.research.itcast.cn',
 });
 const service = axios.create({
-  baseURL: '',
+  baseURL: 'http://ttapi.research.itcast.cn',
   timeout: 50000,
   transformResponse: [
     function (data) {
@@ -47,6 +47,7 @@ service.interceptors.response.use(
     return response;
   },
   async function (error) {
+    console.dir(error);
     const status = error.response.status;
     const user = store.state.login.token;
 

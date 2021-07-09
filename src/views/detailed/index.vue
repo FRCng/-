@@ -1,47 +1,27 @@
 <template>
   <div id="detailed">
-    <van-cell class="main-color h-48" to="/" />
+    <van-nav-bar title="文章详情" left-text="返回" left-arrow @click-left="$router.back() " />
     <itemList :id="id" />
     <!-- 底部 -->
     <div class="bottom">
       <div class="pinlun">
-        <van-button
-          type="primary"
-          class="pinlun-content"
-          text="写评论"
-          @click="handler_btn"
-        ></van-button>
+        <van-button type="primary" class="pinlun-content" text="写评论" @click="handler_btn"></van-button>
       </div>
       <div class="icon">
-        <i
-          class="iconfont icon-dianzan"
-          :class="{ current: linkg }"
-          @click="liking"
-        >
-        </i>
+        <i class="iconfont icon-dianzan" :class="{ current: linkg }" @click="liking"></i>
         <i class="iconfont icon-pinglun"></i>
-        <i
-          class="iconfont icon-shoucang"
-          :class="{ current: coll }"
-          @click="collection"
-        ></i>
+        <i class="iconfont icon-shoucang" :class="{ current: coll }" @click="collection"></i>
         <i class="iconfont icon-fenxiang"></i>
       </div>
     </div>
-    <van-popup
-      v-model="show"
-      closeable
-      position="bottom"
-      :style="{ height: '30%' }"
-      ><van-row class="comments" gutter="20">
+    <van-popup v-model="show" closeable position="bottom" :style="{ height: '30%' }">
+      <van-row class="comments" gutter="20">
         <van-col span="12">
-          <van-field autosize v-model="text" label="请输入评论"
-        /></van-col>
-        <van-col span="12"
-          ><van-button type="primary" size="mini" @click="add_comments"
-            >添加评论</van-button
-          ></van-col
-        >
+          <van-field autosize v-model="text" label="请输入评论" />
+        </van-col>
+        <van-col span="12">
+          <van-button type="primary" size="mini" @click="add_comments">添加评论</van-button>
+        </van-col>
       </van-row>
     </van-popup>
   </div>

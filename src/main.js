@@ -8,6 +8,8 @@ import 'vant/lib/index.css';
 import 'vant/lib/icon/local.css';
 //dayjs
 import '@/utils/day.js';
+//路由守卫
+import "./router/permission";
 
 //全局注册vant
 Vue.use(Vant);
